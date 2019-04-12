@@ -31,7 +31,7 @@ class UsernameSpider(scrapy.Spider):
             watchlist_stocks_count = message['user']['watchlist_stocks_count']
             item['symbol'] = symbol
             item['title'] = title
-            item['watchlist_count'] = str(watchlist_count)
+            item['watchlist_count'] = watchlist_count
             item['pinglun'] = pinglun
             item['created_at'] = created_at
             item['sourcetitle'] = sourcetitle
@@ -44,7 +44,7 @@ class UsernameSpider(scrapy.Spider):
             yield item
             print('..........', username, pinglun, sourcetitle, join_date)
 
-        url = self.baseUrl + '&max=' + maxstr
+        url = self.baseUrl + '&max=' + str(maxstr)
         yield Scrapy.request(url=url, callback = self.parse)
 
 

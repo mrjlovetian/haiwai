@@ -23,7 +23,7 @@ class HaiwaiPipeline(object):
         join_date = pymysql.escape_string(item['join_date'])
         name = pymysql.escape_string(item['name'])
         watchlist_stocks_count = item['watchlist_stocks_count']
-        sql = """INSERT INTO haiwai values ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')"""%(symbol, title, str(watchlist_count), pinglun, created_at, sourcetitle, username, followers, following, join_date, name, watchlist_stocks_count)
+        sql = """INSERT INTO haiwai values ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')"""%(symbol, title, watchlist_count, pinglun, created_at, sourcetitle, username, followers, following, join_date, name, watchlist_stocks_count)
         cursor.execute(sql)
         db.commit()
         db.close()
