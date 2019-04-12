@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import scrapy
 import json
-from haiwai.Items import HaiwaiItem
+from haiwai.items import HaiwaiItem
 
 class UsernameSpider(scrapy.Spider):
     name = 'username'
