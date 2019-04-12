@@ -45,7 +45,7 @@ class UsernameSpider(scrapy.Spider):
             print('..........', username, pinglun, sourcetitle, join_date)
 
         url = self.baseUrl + '&max=' + str(maxstr)
-        yield Scrapy.request(url=url, callback = self.parse)
+        yield scrapy.Request(url=url, callback = self.parse)
 
 
         
