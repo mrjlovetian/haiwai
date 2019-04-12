@@ -9,6 +9,16 @@ import scrapy
 
 
 class HaiwaiItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    maxstr = scrapy.Field()
+    symbol = scrapy.Field()
+    title = scrapy.Field()
+    watchlist_count = scrapy.Field()
+    pinglun = scrapy.Field()
+    created_at = scrapy.Field()
+    sourcetitle = scrapy.Field()
+    username = scrapy.Field()
+    followers = scrapy.Field()
+    following = scrapy.Field()
+    join_date = scrapy.Field()
+    name = scrapy.Field()
+    watchlist_stocks_count = scrapy.Field()
