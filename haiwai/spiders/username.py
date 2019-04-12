@@ -5,7 +5,7 @@ from haiwai.items import HaiwaiItem
 
 class UsernameSpider(scrapy.Spider):
     name = 'username'
-    allowed_domains = ['www.stocktwits.com']
+    allowed_domains = ['stocktwits.com']
     baseUrl = 'https://api.stocktwits.com/api/2/streams/symbol/AAPL.json?filter=top'
     start_urls = [baseUrl]
 
