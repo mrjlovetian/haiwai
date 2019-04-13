@@ -29,4 +29,3 @@ class HaiwaiPipeline(object):
         db.commit()
         db.close()
         return item
-        return item
