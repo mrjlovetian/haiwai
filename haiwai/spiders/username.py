@@ -11,8 +11,8 @@ class UsernameSpider(scrapy.Spider):
     urls = []
     for symbol in usstocks:
         urls.append('https://api.stocktwits.com/api/2/streams/symbol/'+symbol+'.json?filter=top')
-    baseUrl = 'https://api.stocktwits.com/api/2/streams/symbol/AMZN.json?filter=top'
-    start_urls = [baseUrl]
+    # baseUrl = 'https://api.stocktwits.com/api/2/streams/symbol/AMZN.json?filter=top'
+    start_urls = urls
 
     def parse(self, response):
         body = json.loads(response.body)
