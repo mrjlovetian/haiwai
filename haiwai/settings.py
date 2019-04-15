@@ -42,6 +42,9 @@ CONCURRENT_REQUESTS = 32
 DEFAULT_REQUEST_HEADERS = {
   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
   'Accept-Language': 'en',
+  'Connection': 'Keep-Alive',
+  'Accept-Encoding': 'gzip, deflate',
+  'Accept-Language': 'en-US,*',
 }
 
 # Enable or disable spider middlewares
@@ -52,9 +55,10 @@ DEFAULT_REQUEST_HEADERS = {
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
-#DOWNLOADER_MIDDLEWARES = {
-#    'haiwai.middlewares.HaiwaiDownloaderMiddleware': 543,
-#}
+DOWNLOADER_MIDDLEWARES = {
+    'scrapy.downloadermiddlewares.retry.RetryMiddleware': None,
+   'haiwai.middlewares.HaiwaiDownloaderMiddleware': 543,
+}
 
 # Enable or disable extensions
 # See https://doc.scrapy.org/en/latest/topics/extensions.html
